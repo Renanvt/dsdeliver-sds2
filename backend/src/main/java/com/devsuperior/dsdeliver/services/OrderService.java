@@ -1,5 +1,6 @@
 package com.devsuperior.dsdeliver.services;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,8 +9,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.dsdeliver.dto.OrderDTO;
+import com.devsuperior.dsdeliver.dto.ProductDTO;
 import com.devsuperior.dsdeliver.entities.Order;
+import com.devsuperior.dsdeliver.entities.OrderStatus;
+import com.devsuperior.dsdeliver.entities.Product;
 import com.devsuperior.dsdeliver.repositories.OrderRepository;
+import com.devsuperior.dsdeliver.repositories.ProductRepository;
 
 
 
@@ -31,6 +36,9 @@ public class OrderService {
 	
 	@Autowired //Faz a resolução da dependência de forma transparente
 	private OrderRepository repository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	
 	//Função para retornar uma lista de produtos
@@ -41,5 +49,27 @@ public class OrderService {
 		List<Order> list = repository.findOrdersWithProducts();
 		//Transformar cada elemento de product para productDTO
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
+	}
+	
+	//Inserir no banco de dados um novo pedido associados com os seus pedidos
+	//O objeto DTO que é o pedido vai conter todos os dados do pedido e os produtos desse pedido
+	@Transactional
+	public OrderDTO insert(OrderDTO dto){
+		//Salvar o objeto no banco
+		Order order = new Order(null,dto.getAddress(),dto.getLatitude(), dto.getLongitude(), 
+				Instant.now(), OrderStatus.PENDING);
+		
+		//Percorre todos os ProductsDTOS
+		for(ProductDTO p : dto.getProducts()) {
+			//associar os produtos com o pedido
+			//getOne -> instancia um produto sem ir no banco de dados, criando uma entidade
+			//gerenciada pelo jpa para que quando salve a entidade, tambem salva  todas as suas associações
+			Product product = productRepository.getOne(p.getId());
+			order.getProducts().add(product);
+		}
+		//Feito isso eu vou ter o order com os seus dados básicos + os produtos associados a eles
+		//salvando o produto no banco
+		order = repository.save(order);
+		return new OrderDTO(order);
 	}
 }

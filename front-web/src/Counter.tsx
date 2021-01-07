@@ -4,11 +4,11 @@ function Counter(){
     //conceito de estado no componente react
     const [counter, setCounter] = useState(5);
     const handleIncrease = () =>{
-        console.log('incrementar')
+        setCounter(counter +1);
     }
 
     const handleDecrease = () => {
-        console.log('decrementar')
+        setCounter(counter -1);
     }
 
     return (

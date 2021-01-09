@@ -4,7 +4,7 @@
 
 
 # Sobre o projeto
-
+https://renanvt-sds2.netlify.app/
 DSDelivery é uma aplicação full stack web construída durante a 2ª edição da Semana DevSuperior (#sds2), evento organizado pela DevSuperior.
 
 A aplicação consiste em um sistema de registro e entrega de pedidos, onde os pedidos são coletados no front end, e depois são armazenados no back end, que também apresenta uma categorização dos pedidos baseados nos dados requisitados.
@@ -149,7 +149,7 @@ $ yarn install
 # executar o projeto
 $ yarn start
 ```
-
+### ATENÇÃO: O PROJETO NÃO RODA LOCALMENTE NO PROFILE PROD! Se você quiser rodar o projeto localmente depois, mude para o profile test.
 ### Plugins
 
 DsDeliver está atualmente estendido com os seguintes plugins. As instruções sobre como usá-los em seu próprio aplicativo estão no link abaixo.

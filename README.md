@@ -12,10 +12,10 @@ DSDelivery é uma aplicação full stack web construída durante a 2ª edição 
 A aplicação consiste em um sistema de registro e entrega de pedidos, onde os pedidos são coletados no front end, e depois são armazenados no back end, que também apresenta uma categorização dos pedidos baseados nos dados requisitados.
 
 
-Você pode:
-  - Pedir vários produtos;
-  - Usar o mapa para a entrega do(s) produto(s);
-  - Ver informações do produto como nome, descrição, imagem e preço.
+A qualquer momento você pode:
+  - Solicitar vários produtos;
+  - Utilizar o mapa para a entrega do(s) produto(s);
+  - Visualizar informações do produto como nome, descrição, imagem e preço.
 
 # Layout web
 

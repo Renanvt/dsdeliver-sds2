@@ -19,6 +19,8 @@ Você também pode:
 
 ### Layout web
 
+# Padrão camadas adotado
+![camada](https://github.com/Renanvt/dsdeliver-sds2/blob/main/backend/img/camadas.png)
 # Modelo de domínio
 
 ### Nível Conceitual

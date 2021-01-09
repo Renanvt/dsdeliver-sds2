@@ -79,6 +79,31 @@ INSERT INTO tb_order_product (order_id, product_id) VALUES (7 , 5);
 
 # Modelo de objetos
 ![modelo_de_objeto](https://github.com/Renanvt/dsdeliver-sds2/blob/main/backend/img/modelo-de-objetos.PNG)
+# Checklist
+
+* Setup inicial do projeto
+- [x] Dependências
+- [x] Arquivos .properties
+- [x] Configuração de segurança
+* Modelo de domínio
+- [x] Entidades e relacionamentos
+- [x] Mapeamento objeto-relacional
+- [x] Seed
+* Criar endpoints
+- [x] [GET] /products
+- [x] [GET] /orders
+- [x] [POST] /orders
+- [x] [PUT] /orders/{id}/delivered
+* Validar perfil dev
+- [x] Base de dados Postgres local
+- [x] Testar todos endpoints
+* Preparar projeto para implantação
+- [x] Arquivo system.properties
+- [x] Profile prod -> commit
+* Implantar projeto no Heroku
+- [x] Criar app e provisionar Postgres
+- [x] Criar base de dados remota
+- [x] Executar comandos no Heroku CLI
 
 # Tecnologias utilizadas
 

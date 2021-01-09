@@ -13,9 +13,9 @@ A aplicação consiste em um sistema de registro e entrega de pedidos, onde os p
 
 
 Você pode:
-  - Pedir vários produtos
-  - Usar o mapa para a entrega do(s) produto(s)
-  - Ver informações do produto como nome, descrição, imagem e preço antes de fazer um pedido
+  - Pedir vários produtos;
+  - Usar o mapa para a entrega do(s) produto(s);
+  - Ver informações do produto como nome, descrição, imagem e preço.
 
 # Layout web
 

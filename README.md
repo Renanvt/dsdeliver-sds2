@@ -1,8 +1,6 @@
 # DsDelivery
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![NPM](https://img.shields.io/npm/1/react)](https://github.com/Renanvt/dsdeliver-sds2/blob/main/LICENSE)
 
 
 # Sobre o projeto

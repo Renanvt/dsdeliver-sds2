@@ -1,6 +1,6 @@
 # DsDelivery
 
-[![NPM](https://img.shields.io/npm/1/react)](https://github.com/Renanvt/dsdeliver-sds2/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Renanvt/dsdeliver-sds2/blob/main/LICENSE) 
 
 
 # Sobre o projeto

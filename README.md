@@ -24,6 +24,65 @@ A qualquer momento você pode:
 
 ![index/orders](https://github.com/Renanvt/dsdeliver-sds2/blob/main/front-web/img/layout-web_2.PNG
 )
+# Tecnologias utilizadas
+
+### Back end
+* Java
+* Spring Boot
+* JPA /Hibernate
+* Maven
+
+### Front end
+* HTLM/ CSS / JS / TypeScript
+* ReactJS
+
+### Implantação em produção
+* Back end: Heroku
+* Front end: Netlify
+* Banco de dados: Postgresql
+
+Além disso o DsDeliver usa uma série de projetos de código aberto para funcionar corretamente
+
+### Plugins
+DsDeliver está atualmente estendido com os seguintes plugins. As instruções sobre como usá-los em seu próprio aplicativo estão no link abaixo.
+
+| Plugin | README |
+| ------ | ------ |
+| ReactRouter | [https://reactrouter.com/][PlDb] |
+| ReactLeaflet | [https://react-leaflet.js.org/][PlGh] |
+| ReactSelect | [https://react-select.com/home][PlGd] |
+| MapBox | [https://www.mapbox.com/][PlOd] |
+| ReactToastify | [https://fkhadra.github.io/react-toastify/installation/][PlMe] |
+
+### Como executar o projeto
+
+Pré-requisitos: Java 11
+
+Install the dependencies and devDependencies and start the server.
+### Back end web
+```sh
+# clonar repositório
+$ git clone https://github.com/Renanvs/dsdeliver-sds2
+# entrar na posta do projeto back end
+$ cd backend
+# executar o projeto
+$ ./mvnw spring-boot:run
+```
+
+### Front end web
+
+```sh
+# clonar repositório
+$ git clone https://github.com/Renanvs/dsdeliver-sds2
+# entrar na posta do projeto front end web
+$ cd front-web
+# instalar dependências
+$ yarn install
+# executar o projeto
+$ yarn start
+```
+### ATENÇÃO: O PROJETO NÃO RODA LOCALMENTE NO PROFILE PROD! Se você quiser rodar o projeto localmente depois, mude para o profile test.
+
 
 ### Padrão camadas adotado
 ![camada](https://github.com/Renanvt/dsdeliver-sds2/blob/main/backend/img/camadas.png)
@@ -105,64 +164,11 @@ INSERT INTO tb_order_product (order_id, product_id) VALUES (7 , 5);
 - [x] Criar base de dados remota
 - [x] Executar comandos no Heroku CLI
 
-# Tecnologias utilizadas
 
-### Back end
-* Java
-* Spring Boot
-* JPA /Hibernate
-* Maven
 
-### Front end
-* HTLM/ CSS / JS / TypeScript
-* ReactJS
 
-### Implantação em produção
-* Back end: Heroku
-* Front end: Netlify
-* Banco de dados: Postgresql
 
-Além disso o DsDeliver usa uma série de projetos de código aberto para funcionar corretamente:
 
-### Como executar o projeto
-
-Pré-requisitos: Java 11
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-# clonar repositório
-$ git clone https://github.com/Renanvs/dsdeliver-sds2
-# entrar na posta do projeto back end
-$ cd backend
-# executar o projeto
-$ ./mvnw spring-boot:run
-```
-
-### Front end web
-
-```sh
-# clonar repositório
-$ git clone https://github.com/Renanvs/dsdeliver-sds2
-# entrar na posta do projeto front end web
-$ cd front-web
-# instalar dependências
-$ yarn install
-# executar o projeto
-$ yarn start
-```
-### ATENÇÃO: O PROJETO NÃO RODA LOCALMENTE NO PROFILE PROD! Se você quiser rodar o projeto localmente depois, mude para o profile test.
-### Plugins
-
-DsDeliver está atualmente estendido com os seguintes plugins. As instruções sobre como usá-los em seu próprio aplicativo estão no link abaixo.
-
-| Plugin | README |
-| ------ | ------ |
-| ReactRouter | [https://reactrouter.com/][PlDb] |
-| ReactLeaflet | [https://react-leaflet.js.org/][PlGh] |
-| ReactSelect | [https://react-select.com/home][PlGd] |
-| MapBox | [https://www.mapbox.com/][PlOd] |
-| ReactToastify | [https://fkhadra.github.io/react-toastify/installation/][PlMe] |
 
 License
 ----

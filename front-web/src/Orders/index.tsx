@@ -1,3 +1,4 @@
+//Corrigindo ero de importação
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { fetchProducts, saveOrder } from '../api';
@@ -46,8 +47,8 @@ function Orders() {
       products: productsIds
     }
 
-    saveOrder(payload).
-      then((response) => {
+    saveOrder(payload)
+      .then((response) => {
         toast.error(`Pedido enviado com sucesso! Nº ${response.data.id}`);
         setSelectedProducts([]);
       })

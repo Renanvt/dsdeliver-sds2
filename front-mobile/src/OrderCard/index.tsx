@@ -1,25 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Order } from '../Types';
 
-
-function OrderCard() {
+type Props = {
+    order: Order;
+}
+function OrderCard({ order }: Props) {
 
     return (
 
         <View style={styles.container}>
            <View style={styles.header}>
-                <Text style={styles.orderName}>Pedido 1</Text>
+                <Text style={styles.orderName}>Pedido {order.id}</Text>
                 <Text style={styles.orderPrice}>R$ 50,00</Text>
            </View>
-            <Text style={styles.text}>Há 30min
+            <Text style={styles.text}>{order.moment}
             </Text>
             <View style={styles.productsList}>
-                <Text style={styles.text}>Pizza Calabresa
-                </Text>
-                <Text style={styles.text}>Pizza Quatro Queijos
-                </Text>
-                <Text style={styles.text}>Pizza Marguerita
-                </Text>
+              {order.products.map(product => (
+                  <Text key={product.id} style={styles.text}>{product.name}</Text>
+              ))}
             </View>
            
         </View>

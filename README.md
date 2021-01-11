@@ -1,21 +1,21 @@
 # DsDelivery
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Renanvt/dsdeliver-sds2/blob/main/LICENSE) 
 
 
 # Sobre o projeto
+
+https://renanvt-sds2.netlify.app/
 
 DSDelivery é uma aplicação full stack web construída durante a 2ª edição da Semana DevSuperior (#sds2), evento organizado pela DevSuperior.
 
 A aplicação consiste em um sistema de registro e entrega de pedidos, onde os pedidos são coletados no front end, e depois são armazenados no back end, que também apresenta uma categorização dos pedidos baseados nos dados requisitados.
 
 
-Você pode:
-  - Pedir vários produtos;
-  - Usar o mapa para a entrega do(s) produto(s);
-  - Ver informações do produto como nome, descrição, imagem e preço.
+A qualquer momento você pode:
+  - Solicitar vários produtos;
+  - Utilizar o mapa para a entrega do(s) produto(s);
+  - Visualizar informações do produto como nome, descrição, imagem e preço.
 
 # Layout web
 
@@ -24,6 +24,65 @@ Você pode:
 
 ![index/orders](https://github.com/Renanvt/dsdeliver-sds2/blob/main/front-web/img/layout-web_2.PNG
 )
+# Tecnologias utilizadas
+
+### Back end
+* Java
+* Spring Boot
+* JPA /Hibernate
+* Maven
+
+### Front end
+* HTLM/ CSS / JS / TypeScript
+* ReactJS
+
+### Implantação em produção
+* Back end: Heroku
+* Front end: Netlify
+* Banco de dados: Postgresql
+
+Além disso o DsDeliver usa uma série de projetos de código aberto para funcionar corretamente
+
+### Plugins
+DsDeliver está atualmente estendido com os seguintes plugins. As instruções sobre como usá-los em seu próprio aplicativo estão no link abaixo.
+
+| Plugin | README |
+| ------ | ------ |
+| ReactRouter | [https://reactrouter.com/][PlDb] |
+| ReactLeaflet | [https://react-leaflet.js.org/][PlGh] |
+| ReactSelect | [https://react-select.com/home][PlGd] |
+| MapBox | [https://www.mapbox.com/][PlOd] |
+| ReactToastify | [https://fkhadra.github.io/react-toastify/installation/][PlMe] |
+
+### Como executar o projeto
+
+Pré-requisitos: Java 11
+
+Install the dependencies and devDependencies and start the server.
+### Back end web
+```sh
+# clonar repositório
+$ git clone https://github.com/Renanvs/dsdeliver-sds2
+# entrar na posta do projeto back end
+$ cd backend
+# executar o projeto
+$ ./mvnw spring-boot:run
+```
+
+### Front end web
+
+```sh
+# clonar repositório
+$ git clone https://github.com/Renanvs/dsdeliver-sds2
+# entrar na posta do projeto front end web
+$ cd front-web
+# instalar dependências
+$ yarn install
+# executar o projeto
+$ yarn start
+```
+### ATENÇÃO: O PROJETO NÃO RODA LOCALMENTE NO PROFILE PROD! Se você quiser rodar o projeto localmente depois, mude para o profile test.
+
 
 ### Padrão camadas adotado
 ![camada](https://github.com/Renanvt/dsdeliver-sds2/blob/main/backend/img/camadas.png)
@@ -79,65 +138,37 @@ INSERT INTO tb_order_product (order_id, product_id) VALUES (7 , 5);
 
 # Modelo de objetos
 ![modelo_de_objeto](https://github.com/Renanvt/dsdeliver-sds2/blob/main/backend/img/modelo-de-objetos.PNG)
+# Checklist
 
-# Tecnologias utilizadas
+* Setup inicial do projeto
+- [x] Dependências
+- [x] Arquivos .properties
+- [x] Configuração de segurança
+* Modelo de domínio
+- [x] Entidades e relacionamentos
+- [x] Mapeamento objeto-relacional
+- [x] Seed
+* Criar endpoints
+- [x] [GET] /products
+- [x] [GET] /orders
+- [x] [POST] /orders
+- [x] [PUT] /orders/{id}/delivered
+* Validar perfil dev
+- [x] Base de dados Postgres local
+- [x] Testar todos endpoints
+* Preparar projeto para implantação
+- [x] Arquivo system.properties
+- [x] Profile prod -> commit
+* Implantar projeto no Heroku
+- [x] Criar app e provisionar Postgres
+- [x] Criar base de dados remota
+- [x] Executar comandos no Heroku CLI
 
-### Back end
-* Java
-* Spring Boot
-* JPA /Hibernate
-* Maven
 
-### Front end
-* HTLM/ CSS / JS / TypeScript
-* ReactJS
 
-### Implantação em produção
-* Back end: Heroku
-* Front end: Netlify
-* Banco de dados: Postgresql
 
-Além disso o DsDeliver usa uma série de projetos de código aberto para funcionar corretamente:
 
-### Como executar o projeto
 
-Pré-requisitos: Java 11
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-# clonar repositório
-$ git clone https://github.com/Renanvs/dsdeliver-sds2
-# entrar na posta do projeto back end
-$ cd backend
-# executar o projeto
-$ ./mvnw spring-boot:run
-```
-
-### Front end web
-
-```sh
-# clonar repositório
-$ git clone https://github.com/Renanvs/dsdeliver-sds2
-# entrar na posta do projeto front end web
-$ cd front-web
-# instalar dependências
-$ yarn install
-# executar o projeto
-$ yarn start
-```
-
-### Plugins
-
-DsDeliver está atualmente estendido com os seguintes plugins. As instruções sobre como usá-los em seu próprio aplicativo estão no link abaixo.
-
-| Plugin | README |
-| ------ | ------ |
-| ReactRouter | [https://reactrouter.com/][PlDb] |
-| ReactLeaflet | [https://react-leaflet.js.org/][PlGh] |
-| ReactSelect | [https://react-select.com/home][PlGd] |
-| MapBox | [https://www.mapbox.com/][PlOd] |
-| ReactToastify | [https://fkhadra.github.io/react-toastify/installation/][PlMe] |
 
 License
 ----

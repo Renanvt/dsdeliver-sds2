@@ -16,6 +16,17 @@ type Props = {
 function dateFromNow(date: string) {
   return dayjs(date).fromNow();
 }
+//função que formata preços
+export function formatPrice(price: number){
+  const formatter = new Intl.NumberFormat('pt-BR',{
+      style: 'currency',
+      currency: 'BRL',   
+      minimumFractionDigits: 2    
+  })
+
+  return formatter.format(price);
+} 
+
 function OrderCard({ order }: Props) {
 
   return (
@@ -23,7 +34,7 @@ function OrderCard({ order }: Props) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.orderName}>Pedido {order.id}</Text>
-        <Text style={styles.orderPrice}>R$ 50,00</Text>
+        <Text style={styles.orderPrice}>{formatPrice(order.total)}</Text>
       </View>
       <Text style={styles.text}>{dateFromNow(order.moment)}
       </Text>

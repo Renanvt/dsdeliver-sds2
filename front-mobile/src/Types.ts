@@ -6,6 +6,7 @@ export type Order = {
     moment: string;
     status: string;
     products: Product[];
+    total: number;
 }
 export type Product={
     id: number;

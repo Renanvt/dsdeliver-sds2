@@ -1,9 +1,9 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-function Header() {
+function OrderDetails() {
     {/*Redirecionar o usuário pra página de listagem de pedido */}
     const navigation = useNavigation();
         const handleOnPress = () => {
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Header;
+export default OrderDetails;

@@ -1,5 +1,5 @@
 
-import { useNavigation } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, ScrollView, Alert, Text } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -17,22 +17,30 @@ function Orders() {
    {/*Redirecionar o usuário pra página de listagem de pedido */ }
    const navigation = useNavigation();
 
+   //Forçar o carregamento do componente
+   //Toda vez que renderiza a tela de listagem de pedidos, vai mudar o valor da variável pra true ou false. Ex.: quando eu saio da tela o valor do isFocused é false, quando eu entro na tela é true
+   const isFocused = useIsFocused();
+
+    const fetchData = () => {
+      setIsLoading(true);
+      fetchOrders()
+        .then(response => setOrders(response.data))
+        .catch(() => Alert.alert('Houve um erro ao buscar os pedidos!'))
+        .finally(() => setIsLoading(false));
+    }
   //Quando o componente for montado, faz uma requisição para buscar os pedidos
   useEffect(() => {
-    setIsLoading(true);
-    fetchOrders()
-      .then(response => setOrders(response.data))
-      .catch(() => Alert.alert('Houve um erro ao buscar os pedidos!'))
-      .finally(() => setIsLoading(false));
-  }, []);
-  const handleOnPress = () => {
-
-   
-    const handleOnPress = () => {
-      navigation.navigate('OrderDetails');
+    if (isFocused) {
+      fetchData();
+    }
+  }, [isFocused]);
+  const handleOnPress = (order: Order) => {
+      navigation.navigate('OrderDetails',{
+        order
+      });
     }
 
-  }
+  
   return (
     <>
       <Header />
@@ -41,7 +49,9 @@ function Orders() {
           <Text>Buscando pedidos...</Text>
         ) : (
             orders.map(order => (
-              <TouchableWithoutFeedback key={order.id} onPress={handleOnPress}>
+              <TouchableWithoutFeedback
+               key={order.id} 
+               onPress={() => handleOnPress(order)}>
                 <OrderCard order={order} />
               </TouchableWithoutFeedback>
             ))
@@ -49,7 +59,7 @@ function Orders() {
       </ScrollView>
     </>
   );
-}
+            }
 
 const styles = StyleSheet.create(
   {

@@ -5,7 +5,7 @@
 
 # Sobre o projeto
 
-https://renanvt-sds2.netlify.app/
+https://renanvt-dsvendas.netlify.app/
 
 DSDelivery é uma aplicação full stack web construída durante a 2ª edição da Semana DevSuperior (#sds2), evento organizado pela DevSuperior.
 
